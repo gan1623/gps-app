@@ -76,24 +76,24 @@ function showPosition(position) {
     }
 
     // 位置情報の精度を円で表示
-    // accuracyCircle = L.circle(
-    //     [latitude, longitude],
-    //     {
-    //         radius: accuracy,
-    //         color: "blue",
-    //         fillColor: "lightblue",
-    //         fillOpacity: 0.3
-    //     }
-    // ).addTo(map);
     accuracyCircle = L.circle(
         [latitude, longitude],
         {
-            radius: 100,
+            radius: accuracy,
             color: "blue",
-            fillColor: "blue",
-            fillOpacity: 0.2
+            fillColor: "lightblue",
+            fillOpacity: 0.3
         }
     ).addTo(map);
+    // accuracyCircle = L.circle(
+    //     [latitude, longitude],
+    //     {
+    //         radius: 100,
+    //         color: "blue",
+    //         fillColor: "blue",
+    //         fillOpacity: 0.2
+    //     }
+    // ).addTo(map);
     
     statusText.textContent = "位置情報を取得しました";
     getLocationButton.disabled = false;
